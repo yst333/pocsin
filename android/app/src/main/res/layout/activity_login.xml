@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textViewTitle"-->
+    <!--        android:layout_width="200dp"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="[회원 가입]"-->
+    <!--        android:textColor="#ff0000"-->
+    <!--        android:textSize="30dp"-->
+    <!--        tools:layout_editor_absoluteX="117dp"-->
+    <!--        tools:layout_editor_absoluteY="103dp" />-->
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/join_background" />
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pocsin_logo" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="416dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4">
+
+
+        <TextView
+            android:id="@+id/textViewId"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/ibmplexsanskr_semibold"
+            android:text="아이디"
+            android:textColor="#4B7299"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="41dp"
+            tools:layout_editor_absoluteY="282dp" />
+
+        <EditText
+            android:id="@+id/signInId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/border_solid"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="411dp"
+        android:layout_height="132dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textViewPw"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/ibmplexsanskr_semibold"
+            android:text="비밀번호"
+            android:textColor="#4B7299"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/signInPw"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/border_solid"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-11dp">
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_login"
+            android:fontFamily="@font/ibmplexsanskr_bold"
+            android:text="로그인"
+            android:textSize="20sp"
+            android:textColor="#fff" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
