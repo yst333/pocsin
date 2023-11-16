@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- MyBatis xml 파일 작성 시 반드시 mapper 태그의 namespace 속성값을
+     Mapper 인터페이스와 동일한 이름으로 설정해야 합니다. -->
+<mapper namespace="pocsin.work.user.MemberMapper">
+
+
+	<select id="getList" resultType="pocsin.work.user.MemberVO">
+	<![CDATA[
+		SELECT * from member
+	]]>	
+	</select>
+	
+	<!-- select * from member where id='ksy'  -->
+	<select id="read" resultType="pocsin.work.user.MemberVO">
+		select * from member where id=#{id}
+	</select>
+	
+	<!-- insert into member (id, pw, name, email, phoneNum, postNum, address) values('ksy', 'ksy', '기성용', 'ksy@naver.com') -->
+		 <!-- 
+	<insert id="insert">
+		insert into member (id, pw, name, email, phoneNum, postNum, address) values(#{id}, #{pw}, #{name}, #{email}, #{phoneNum}, #{postNum}, #{address})
+	</insert>	
+	 -->
+ 	<insert id="insert">
+		insert into member (id, pw, name, email, phoneNum) values(#{id}, #{pw}, #{name}, #{email}, #{phoneNum})
+	</insert>
+
+	 
+	<!-- update member set pw='1234', email='ksy@gmail.com' where id='ksy' -->
+	<update id="update">
+		update member set pw=#{pw}, email=#{email}, phoneNum=#{phoneNum} where id=#{id}
+	</update>
+
+
+	<!-- delete from member where id='ksy'; -->
+	<delete id="delete">
+		delete from member where id=#{id}
+	</delete>
+	
+    <!-- LOGIN -->
+    <select id="login" resultType="pocsin.work.user.MemberVO">
+    	select * from member where id=#{id} and pw=#{pw} 
+    </select>
+
+
+</mapper>
