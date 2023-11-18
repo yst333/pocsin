@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- MyBatis xml 파일 작성 시 반드시 mapper 태그의 namespace 속성값을
+     Mapper 인터페이스와 동일한 이름으로 설정해야 합니다. -->
+<mapper namespace="pocsin.work.order.OrderMapper">
+
+
+	
+	<select id="getList" resultType="pocsin.work.order.OrderVO">
+	<![CDATA[
+		SELECT * from product_order
+	]]>	
+	</select>
+	
+	<!-- select * from member where id='ksy'  
+	<select id="read" resultType="pocsin.work.order.OrderVO">
+		select * from member where id=#{id}
+	</select>
+	 -->
+	<!-- insert into member (id, pw, name, email, phoneNum, postNum, address) values('ksy', 'ksy', '기성용', 'ksy@naver.com') -->
+		 <!-- 
+	<insert id="insert">
+		insert into member (id, pw, name, email, phoneNum, postNum, address) values(#{id}, #{pw}, #{name}, #{email}, #{phoneNum}, #{postNum}, #{address})
+	</insert>	
+	 -->
+ 	<insert id="order">
+		insert into product_order (pname, per_num, pay_amount, pbuyer, padress) values(#{pname}, #{per_num}, #{pay_amount}, #{pbuyer},  #{padress})
+	</insert>
+
+	 
+	
+
+
+</mapper>

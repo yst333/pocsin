@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="pocsin.work.notice.NoticeMapper" >
+
+	
+  	<!-- SELECT * from Notice WHERE nbno > 0  -->
+	<select id="getList" resultType="pocsin.work.notice.NoticeVO">
+	<![CDATA[
+		SELECT * from Notice WHERE nbno > 0
+	]]>	
+	</select>
+
+
+	<!-- insert 처리 : insert만 처리되고 생성된 PK 값을 알 필요가 없는 경우 -->
+	<!-- INSERT INTO Notice(nbno, admin, title ,content) VALUES(Notice_seq.nextval,'pocsin','testtit01','test 
+		cont') -->
+	<insert id="insert">
+		INSERT INTO Notice(nbno, admin, title ,content) VALUES(Notice_seq.nextval,'admin',#{title},#{content})
+	</insert>
+
+	
+	<!-- read 처리 -->
+	<!-- SELECT *FROM Notice WHERE nbno = 1 -->
+	<select resultType="pocsin.work.notice.NoticeVO" id="read">
+		SELECT *FROM Notice WHERE nbno = #{nbno}
+	</select>
+	
+	<!-- DELETE from Notice WHERE nbno = 3 -->
+	<delete id="delete">
+		DELETE from Notice WHERE nbno = #{nbno}
+	</delete>
+	
+
+	<!-- update 처리 -->
+	<!-- UPDATE Notice set title = '수정된 제목', content = '수정된 내용', admin = 'admin' WHERE nbno = 1 -->
+	<update id="update">
+		UPDATE Notice set title = #{title}, content = #{content} WHERE nbno = #{nbno}
+	</update>
+	
+	
+
+</mapper>

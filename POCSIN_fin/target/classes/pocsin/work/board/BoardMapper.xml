@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- MyBatis xml 파일 작성 시 반드시 mapper 태그의 namespace 속성값을
+     Mapper 인터페이스와 동일한 이름으로 설정해야 합니다. -->
+<mapper  namespace="pocsin.work.board.BoardMapper">
+	<sql id="criteria">
+			<trim prefix="(" suffix=") AND " prefixOverrides="OR" >
+					<foreach item="type" collection="typeArr">
+						<trim prefix="OR">
+							<choose>
+								<when test="type == 'T'.toString()">
+									title like '%'||#{keyword}||'%'
+								</when>
+								<when test="type == 'C'.toString()">
+									content like '%'||#{keyword}||'%'
+								</when>
+								<when test="type == 'W'.toString()">
+									writer like '%'||#{keyword}||'%'
+								</when>
+							</choose>
+						</trim>
+					</foreach>
+				</trim>
+		</sql>
+
+
+	<!-- getList 처리 -->
+	<select id="getList" resultType="pocsin.work.board.BoardVO">
+		<![CDATA[
+			select * from BOARD where bno>0
+		]]>
+	</select>
+	
+	
+	
+	<!--getListWithPaging 처리 -->
+	<select id="getListWithPaging" resultType="pocsin.work.board.BoardVO">
+		<![CDATA[
+		SELECT BNO, TITLE, CONTENT, WRITER, REGDATE, UPDATEDATE, replyCnt
+		FROM (
+			SELECT
+			/*+ INDEX_DESC(BOARD PK_BOARD) */
+			ROWNUM rn, bno, title, content, WRITER, REGDATE, UPDATEDATE, replyCnt
+			from BOARD
+			WHERE
+		]]><!-- 검색기능을 위해 조건이 하나 더 들어가기 때문에 CDATA로 나눔 -->
+		
+		<include refid="criteria"></include>
+
+	   <!-- 
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item="type" collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							title like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							content like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							writer like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>		
+		</trim>
+		 -->
+		<![CDATA[
+			 ROWNUM <= #{pageNum} * #{amount}
+			)
+		WHERE RN > (#{pageNum} - 1) * #{amount}
+		]]>	
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*) from board 
+		where 
+		<include refid="criteria"></include>
+		bno > 0
+	</select>	
+	
+	<!-- 댓글 카운트 처리 -->
+	<!-- update board set replycnt = replycnt + 10 where bno = 41; -->
+	<update id="updateReplyCnt">
+		update board set replyCnt = replyCnt + #{amount} WHERE bno = #{bno}
+	</update>
+	
+	
+	<!-- INSERT 처리 -->
+	<!-- INSERT INTO member(id, password, email ,name, address) VALUES('TestID6','1234','이메일','user','서울') -->
+	<insert id="insertSelectKey">
+		<selectKey resultType="long" order="BEFORE" keyProperty="bno">
+			SELECT board_seq.nextval from dual 
+		</selectKey>
+		INSERT INTO board(bno, title, content, writer) VALUES(#{bno}, #{title}, #{content}, #{writer}) 
+	</insert>
+	
+	
+	<!-- GET 처리 -->
+	<!-- read : select * from board where bno = 5 -->
+	<select resultType="pocsin.work.board.BoardVO" id="read">
+		select * from board where bno = #{bno} 
+	</select>
+	
+	<!-- UPDATE 처리 -->
+	<!--  UPDATE board set title = #{title}, content = #{content}, writer = #{writer}, updatedate = sysdate where bno = 5;  -->
+	<update id="update">
+		UPDATE board set title = #{title}, content = #{content}, writer = #{writer}, updatedate = sysdate where bno = #{bno}
+	</update>
+	
+	<!-- DELETE 처리 -->  
+	<!-- DELETE from board WHERE bno = 40 -->
+	<delete id="delete">
+		DELETE from board WHERE bno = #{bno}
+	</delete>
+	
+	             
+</mapper>

@@ -1,0 +1,282 @@
+/* 
+---------------------------------------------
+font & reset css
+--------------------------------------------- */
+/* 구글 폰트(본문-영어) Paytone One : https://fonts.google.com/specimen/Paytone+One?preview.text=POCSIN%20pocsin
+   font-family: 'Paytone One', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+/* 구글 폰트(본문 -한글) IBM Plex Sans KR : https://fonts.google.com/specimen/IBM+Plex+Sans+KR?preview.text=POCSIN%20pocsin&query=ibm+plex+sans+kr
+   font-family: 'IBM Plex Sans KR', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
+
+
+/*
+---------------------------------------------
+reset
+--------------------------------------------- 
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+figure, header, nav, section, article, aside, footer, figcaption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header, nav, section, article, aside, footer, hgroup {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Paytone One', sans-serif;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 700;
+}
+
+ul {
+  margin-bottom: 0px;
+}
+
+img {
+  width: 100%;
+  overflow: hidden;
+}
+
+.back{
+	background: url(../images/board_back.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+}
+/* 
+---------------------------------------------
+board_banner Style
+--------------------------------------------- 
+*/
+
+.board_banner{
+	width: 100%;
+	height: 340px;	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.board_banner img{
+	width: 5rem;
+	margin-right: 1rem;
+}
+
+.board_banner strong{
+    font-size: 3rem;
+    color: #4B7299;
+    font-weight: 700;
+}
+
+/* 
+---------------------------------------------
+panel-body Style
+--------------------------------------------- 
+*/
+
+.panel-body{
+    padding: 1% 12% 8%;
+    width: 100%;
+}
+
+.table{
+    --bs-table-border-color: #E9DDE1;
+    --bs-table-hover-bg: rgb(233, 221, 225, 0.25);
+    --bs-table-hover-color: #26496C;
+    --bs-table-hover-font-weight: bold;
+    color: #26496C;
+}
+
+a {
+    color: #4B7299;
+    text-decoration: underline;
+}
+
+#searchForm{
+	width: 100%;
+	margin: 10px auto;
+    /* background-color: blue; */
+    margin-top: 1%;
+}
+
+#searchForm select, #searchForm input{
+    width: 200px;
+    height: 30px;
+    margin-right: 8px;
+    vertical-align: middle;
+    outline: none;
+    border-radius: 15px;
+    border-color: #E9DDE1;
+    color: #4B7299;    
+    background-color: #E9DDE1;
+}
+
+#searchForm select option{
+    padding-left: 8px;
+    margin-right: 8px;
+    vertical-align: middle;
+    outline: none;
+    border-radius: 15px;
+    border-color: #E9DDE1;
+    color: #4B7299;    
+    background-color: #E9DDE1;
+    --bs-white-rgb: #E9DDE1;
+}
+
+.btn {
+    background-color: #4B7299;
+    border-radius: 15px;
+    color: #CBD6EC;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 100px;
+    height: 33px;
+}
+
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #4B7299;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  z-index: 2;
+  color: #4B7299;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #4B7299;
+  border-color: #4B7299;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+

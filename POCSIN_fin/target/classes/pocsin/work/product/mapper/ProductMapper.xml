@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pocsin.work.product.mapper.ProductMapper">
+	
+	<select id="select1" resultType="pocsin.work.product.ProductVO">
+		select * from product where category = '수면등'
+	</select>
+	<select id="select2" resultType="pocsin.work.product.ProductVO">
+		select * from product where category = '가습기'
+	</select>
+	<select id="select3" resultType="pocsin.work.product.ProductVO">
+		select * from product where category = '잠옷세트'
+	</select>
+	<select id="select4" resultType="pocsin.work.product.ProductVO">
+		select * from product where category = '침구세트'
+	</select>
+	<select id="select5" resultType="pocsin.work.product.ProductVO">
+		select * from product where category = '릴렉서'
+	</select>
+	
+	
+	
+	
+	<select id="read" resultType="pocsin.work.product.ProductVO">
+		select * from product where per_num = #{per_num}
+	</select>
+	
+	
+</mapper>

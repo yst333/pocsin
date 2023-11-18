@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+
+	<typeAliases>
+		<!--com.spring.iamport.model.PaymentVO를 인지 약칭은 pay -->
+		<typeAlias type="pocsin.work.pay.PayVO" alias="pay"/>
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+				<dataSource type="POOLED"> <!-- 오라클DB와 붙게끔 설정파일을 짠다. 이 설정을 물고 DAO에 있는 DB연동되어있는 것이 처리된다. -->
+				<!-- mybatis-config.xml을 처리하는데 그 DB관련 설정과 엮어져야 하므로 그 엮어져야하는 설정을 지금 짜는것이다. -->
+				<!-- 얘를 물고 데이터 처리하는 것 -->
+					<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+					<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+					<property name="username" value="pocsin"/>
+					<property name="password" value="pocsin"/>
+				</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="pocsin/work/pay/PayMapper.xml"/> <!-- 여기에 SQL쿼리문 작성할것  -->
+	</mappers>
+
+</configuration>

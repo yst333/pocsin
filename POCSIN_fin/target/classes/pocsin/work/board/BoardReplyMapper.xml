@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="pocsin.work.board.BoardReplyMapper">
+  
+	  <!-- 
+	   insert into board_reply (rno, bno, reply, replyer)
+		values (board_REPLY_SEQ.nextval, '20', 'replytest','댓글1');
+	   -->
+	<insert id="insert">
+		insert into Board_reply(rno, bno, reply, replyer)
+		VALUES(Board_reply_seq.nextval, #{bno}, #{reply}, #{replyer})
+	</insert>
+
+	
+	<!-- SELECT * FROM board_reply where rno =6;  -->
+	<select id="read" resultType="pocsin.work.board.BoardReplyVO">
+		SELECT * FROM Board_reply where rno =#{rno}	
+	</select>
+	
+	
+	<!-- delete  FROM board_reply where rno = 4-->
+	<delete id="delete"> 
+		delete FROM Board_reply where rno = #{rno}
+	</delete>
+	
+	
+	<!-- UPDATE board_reply set reply = '댓글수정 테스트', updatedate = sysdate WHERE rno =6  -->
+	<update id="update">
+		UPDATE Board_reply set reply = #{reply}, updatedate = sysdate WHERE rno = #{rno}
+	</update>
+	
+	
+	<!-- 댓글은 정책상 마지막에 단 댓글이 위에 올라오게 하려면 내림차순, 댓글은 먼저 단걸 보여주는 경우도 많다 오름차순 -->
+	<!-- 게시글은 보통 최근글이 위에 보임 내림차순 댓글은 오름차순으로 작업한다. -->
+	<!-- SELECT rno, bno, reply, replyer, replyDate, updatedate
+		FROM tbl_reply
+		WHERE bno = 1441838
+		ORDER BY rno asc -->
+	<!--  
+	<select id="getListWithPaging" resultType="org.zerock.domain.ReplyVO">
+		SELECT rno, bno, reply, replyer, replyDate, updatedate
+		FROM tbl_reply
+		WHERE bno = #{bno}
+		ORDER BY rno asc
+	</select>
+	-->
+	
+	 <select id="getListWithPaging" resultType="pocsin.work.board.BoardReplyVO">
+	 <![CDATA[
+	 
+	 SELECT rno, bno, reply, replyer, replydate, updatedate
+		FROM (
+			SELECT
+			/*+ INDEX_DESC(Board_reply pk_reply) */
+			ROWNUM rn, rno, bno, reply, replyer, replyDate, updatedate
+			from Board_reply
+			WHERE bno = #{bno}
+			and rno > 0
+			and rownum <= #{cri.pageNum} * #{cri.amount}
+		) where rn > (#{cri.pageNum} - 1) * #{cri.amount}
+	 
+	 ]]>
+	 </select>
+	
+	
+	<select id="getCountByBno" resultType="int">
+	<![CDATA[
+		SELECT count(rno) from Board_reply WHERE bno = #{bno}
+	]]>
+	</select>
+	
+
+</mapper>

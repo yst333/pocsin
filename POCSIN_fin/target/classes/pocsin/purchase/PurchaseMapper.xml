@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="pocsin.work.purchase.PurchaseMapper">
+
+
+	<!-- select * from pay order by per_time desc 
+	<select id="getList"
+		resultType="pocsin.work.purchase.PurchaseVO">
+		select * from (
+		select * from pay
+		order by per_time desc)
+		where rownum =1
+	</select>-->
+
+	<!-- read 처리 -->
+	<select resultType="pocsin.work.purchase.PurchaseVO" id="read">
+
+		select * from (
+		select * from pay
+		order by per_time desc)
+		where rownum =1
+
+	</select>
+
+
+
+</mapper>
