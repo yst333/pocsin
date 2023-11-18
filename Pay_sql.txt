@@ -1,0 +1,43 @@
+-- 최종 Pay 테이블 생성 23.11.16 21:58
+CREATE TABLE Pay (
+pay_id varchar2(50) not null primary key, --시리얼번호or가맹점번호
+per_time date, --결제날짜
+import_id varchar2(50), --주문번호
+per_num varchar2(50), --상품번호
+pname varchar2(100), --상품명
+pay_amount int, --상품가격
+pcount varchar2(50), --결제수량
+pbuyer varchar2(50), --구매자 이름
+padress varchar2(150) --구매자 주소
+);
+
+-- Pay_seq 시퀀스 생성
+create sequence Pay_seq
+increment by 1
+start with 0
+maxvalue 9999999
+minvalue 0;
+
+-- Pay_pnum_seq 시퀀스 생성
+create sequence Pay_pnum_seq
+increment by 1
+start with 0
+maxvalue 9999999
+minvalue 0;
+
+-- Pqy 데이터 확인 명령어
+select * from Pay;
+commit;
+
+-- Pay insert test
+insert into Pay values(Pay_seq.nextval, sysdate, Pay_pnum_seq.nextval, 'testorder123', '잠옷', 10, '1', '테스트유저', '서울시');
+
+--Pay select test
+select * from pay order by per_time desc;
+select * from pay where pay_id='imp_776120050850';
+
+--Pay mybatis query
+select * from (
+select * from pay
+order by per_time desc)
+where rownum =1;
