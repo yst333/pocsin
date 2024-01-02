@@ -176,6 +176,8 @@ AOS 라이브러리를 사용하여 아이콘을 효과적으로 표현합니다
 <h4>1:1문의</h4>
 <p>Spring Boot MVC , CRUD 를 이용하여 관리자가 클리닉 간편 상담 게시글을 조회 할 수 있도록 기능 구현 하였습니다. AXIOS 라이브러리를 사용하여 서버통신이 가능하도록 했습니다. </p>
 
+![qna](https://github.com/yst333/pocsin/assets/141698056/aae9d409-d04c-41ea-bf35-8de92db444a9)
+
 <h3>구동 방법</h3>
 <p>back-end/README.md참조</p>
 
