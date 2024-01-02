@@ -30,6 +30,23 @@
 	<li>
 		<code>Component</code>
   	</li>	
-		
+	<li>
+		<code>Reactstrap</code>	
 	</li>
+	<li>
+		<code>Node.js</code>
+	</li>	
+	<li>
+		<code>Gradle</code>
+  	</li>	
+	<li>
+		<code>AndroidApp(JDK)</code>	
+	</li>
+	<li>
+		<code>Retrofit2</code>
+  	</li>	
+	<li>
+		<code>Moshi</code>	
+	</li>	
+	
 </ul>
