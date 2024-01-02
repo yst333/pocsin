@@ -1,10 +1,17 @@
 <h1>POCSIN</h1>
 <h3>숙면을 위한 현대인들의 커뮤니티로 클리닉 소개와 온라인 상품 판매를 겸한 쇼핑몰 웹/앱 반응형 서비스 개발</h3>
 
-![OVERVIEW](https://github.com/yst333/pocsin/assets/141698056/866869c3-fd4e-4c33-ab6a-23d511a38a28)
-![DESK REARCH](https://github.com/yst333/pocsin/assets/141698056/e961311c-57c1-4e14-a31e-9b1150eb031e)
-![PERSONA](https://github.com/yst333/pocsin/assets/141698056/e0dbce7f-b829-48d4-9628-b1aeb8a8738f)
-![INSIGHT](https://github.com/yst333/pocsin/assets/141698056/ff210aa5-922f-41f4-9225-e608e58e25b6)
+<div>
+<!--OVERVIEW-->
+<img src="https://github.com/yst333/pocsin/assets/141698056/866869c3-fd4e-4c33-ab6a-23d511a38a28" style="width:25%">
+<!--DESK REARCH-->
+<img src="https://github.com/yst333/pocsin/assets/141698056/e961311c-57c1-4e14-a31e-9b1150eb031e" style="width:25%">
+<!--PERSONA-->
+<img src="https://github.com/yst333/pocsin/assets/141698056/e0dbce7f-b829-48d4-9628-b1aeb8a8738f" style="width:25%">
+<!--INSIGHT-->
+<img src="https://github.com/yst333/pocsin/assets/141698056/ff210aa5-922f-41f4-9225-e608e58e25b6" style="width:25%">
+
+</div>
 
 <p>“POCSIN”은 불면증으로 불편을 겪는 고객들의 꿀잠 꿀팁 정보를 공유하는 커뮤니티로 수면에 대한 정보와 솔루션을 제공하고, 숙면을 위한 상품을 판매하는 반응형 웹/앱 쇼핑몰입니다. 저희 커뮤니티& 쇼핑몰은 OracleDB 데이터베이스를 활용하여 앱/웹 서비스를 제공합니다. AndroidApp(JDK), SpringBoot를 이용하여 편안한 잠자리를 위한 sounds 기능과 상품 및 클리닉 소개로 접근성을 높였고, REACT, Spring, SpringBoot를 활용하여 더 많은 서비스 제공을 위해 웹 반응형 사이트를 구현하였습니다.</p>
 
@@ -155,8 +162,7 @@ AOS 라이브러리를 사용하여 아이콘을 효과적으로 표현합니다
 
 <h4>- 마이페이지</h4>
 <p>GetMapping으로 회원정보를 불러들여온 후 로그인 한 세션에 남아있는 계정에 대해서 PostMapping으로 회원정보 수정 또는 탈퇴처리 하도록 구현하였습니다. </p>
-
-![mypage](https://github.com/yst333/pocsin/assets/141698056/ee9eaf46-2c2e-41c1-be6f-4742c2dd0217)
+<img src="https://github.com/yst333/pocsin/assets/141698056/ee9eaf46-2c2e-41c1-be6f-4742c2dd0217)">
 
 
 
@@ -175,8 +181,7 @@ AOS 라이브러리를 사용하여 아이콘을 효과적으로 표현합니다
 
 <h4>1:1문의</h4>
 <p>Spring Boot MVC , CRUD 를 이용하여 관리자가 클리닉 간편 상담 게시글을 조회 할 수 있도록 기능 구현 하였습니다. AXIOS 라이브러리를 사용하여 서버통신이 가능하도록 했습니다. </p>
-
-![qna](https://github.com/yst333/pocsin/assets/141698056/aae9d409-d04c-41ea-bf35-8de92db444a9)
+<img src="https://github.com/yst333/pocsin/assets/141698056/cee9e4db-7721-4eda-9811-3122f3759c10"/>
 
 <h3>구동 방법</h3>
 <p>back-end/README.md참조</p>
