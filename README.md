@@ -155,7 +155,7 @@ AOS 라이브러리를 사용하여 아이콘을 효과적으로 표현합니다
 
 <h4>- 마이페이지</h4>
 <p>GetMapping으로 회원정보를 불러들여온 후 로그인 한 세션에 남아있는 계정에 대해서 PostMapping으로 회원정보 수정 또는 탈퇴처리 하도록 구현하였습니다. </p>
-![image](https://github.com/yst333/pocsin/assets/141698056/50b00483-b89a-46cb-82df-2f4c4cf08b2c)
+<img src="(https://github.com/yst333/pocsin/assets/141698056/50b00483-b89a-46cb-82df-2f4c4cf08b2c)" />
 
 <h4>꿈다이어리<h4>
 <p>풀캘린더라이브러리를 이용하여 마이페이지 내에서 달력을 확인할 수 있도록 하였습니다.</p>
