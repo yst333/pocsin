@@ -90,15 +90,7 @@
 	<li>
 		<code>PG 이니시스 카드 결제 API</code>
 	</li>
-	<li>
-		<code>Media Query</code>
-  	</li>	
-	<li>
-		<code>Figma</code>
-	</li>	
-	<li>
-		<code>Notion</code>
-	</li>	
+	
 </ul>
 <h3>COLLABORATION</h3>
 <ul class="collaboration">
@@ -158,15 +150,22 @@ GetMapping으로 관리자가 등록한 게시글을 CRUD의 Read를 사용하�
 글 번호를 기준으로 최신  공지사항이 상단에 뜨게 하였습니다.</p>
 <img src="https://github.com/yst333/pocsin/assets/141698056/5edd16c2-9dd9-4306-af84-307bd8159379">
 
-<h3>🧭 찾아오시는길<h3>
+<br><br>
+
+<h3>🧭 찾아오시는길</h3>
 <p> 
 Kakao Map API를 사용하여 지도 구현했습니다. <br>
 AOS 라이브러리를 사용하여 아이콘을 효과적으로 표현하고, 클리닉 대해 간편 상담 신청이 가능하며, 개인정보 약관은 POP-UP창으로 구현하였습니다.
 </p>
+<img src="https://github.com/yst333/pocsin/assets/141698056/c126e81a-e407-445f-8d28-e5c0491f7f13">
+
+<br><br>
 
 <h3>🗃 마이페이지</h3>
 <p>GetMapping으로 회원정보를 불러들여온 후 로그인 한 세션에 남아있는 계정에 대해서 PostMapping으로 회원정보 수정 또는 탈퇴처리 하도록 구현하였습니다. </p>
 <img src="https://github.com/yst333/pocsin/assets/141698056/ee9eaf46-2c2e-41c1-be6f-4742c2dd0217">
+
+<br><br>
 
 <h3>📖 꿈다이어리</h3>
 <p>풀캘린더라이브러리를 이용하여 마이페이지 내에서 달력을 확인할 수 있도록 하였습니다.</p>
