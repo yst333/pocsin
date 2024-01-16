@@ -110,28 +110,39 @@
 
 <!--user-->
 <h2>🖥️ &nbsp; 사용자 웹페이지 기능</h2>
-<h3>📦 상품리스트</h3>
+<h3>📦 상품 리스트</h3>
 <p>select1(), select2(), …, select5() 각 메서드들이 서로 다른 쿼리를 실행하여 상품 목록을 다양하게 보여줄 수 있습니다.</p>
+<img src="https://github.com/yst333/pocsin/assets/141698056/dee36492-35b8-4354-84fc-984eb09d131c">
+
+<br><br>
 
 <h3>🗂 상품상세</h3>
 <p>데이터베이스에서 읽을 제품의 기본 키인 pno 칼럼에 primary_key 제약조건을 부여한 후 Long 타입으로 필드 선언하여 상품별로 조회할 수 있도록 했습니다.</p>
 
-<h3>🚚 배송지정보</h3>
+<br><br>
+
+<h3>🚚 상품 구매</h3>
+<img src="https://github.com/yst333/pocsin/assets/141698056/ef79a68f-4f9d-4777-be57-5603f0ff5ea7">
+
+<strong>배송지정보</strong>
 <p>
 1. goPopup() 함수로 주소 검색을 위한 팝업 페이지(/jusoPopup.jsp)를 호출 <br>
 2. jusoCallBack() 함수로 팝업 페이지에서 주소 입력 정보를 받아와 현재 페이지의 입력 요소에 값을 설정하였습니다
 </p>
 
-<h3>💳 결제</h3>
+<hr>
+<strong> 결제</strong>
 <p>
 1.배송지 입력 후 결제하기 클릭시 PG사 카드결제가 진행되도록 설계 하였습니다. <br>
 2.변수를 사용하여 결제창에 상품명과  상품가격이 반영되도록 하였습니다. <br>
 3.처리 성공시 결제내역으로 돌아가고, 실패시에는 alert로 안내처리를 하였습니다.
 </p>
-<img src="https://github.com/yst333/pocsin/assets/141698056/ef79a68f-4f9d-4777-be57-5603f0ff5ea7">
 
-<h3>🧾 구매내역</h3>
+<hr>
+<strong>🧾 구매내역</strong>
 <p>카드결제를 완료하면 PG사를 통해 상품가격이 출금되고, CRUD의 READ기능을 사용해 객체로 불러와 필요항목만 화면에 띄워 사용자가 방금 결제한 내용을 확인하도록 하였습니다.</p>
+
+<br><br>
 
 <h3>✨ 이벤트</h3>
 <p>jQuery-cookie 라이브러리를 이용해서 3일 동안 이 창 열지않기 체크박스에 체크를 하면 생성된 쿠키가 3일간 남아있게 되고, 쿠키가 남아있으면 팝업이 뜨지 않도록 했습니다.</p>
@@ -140,9 +151,15 @@
 <p>게시글 CRUD 및 페이징 처리, 댓글 CRUD, 카운트 기능을 화면에서 출력될 수 있도록 구현하습니다. <br>
 검색 기능을 추가하여 글제목, 작성자, 글내용별로 검색이 가능하도록 구현하였습니다.  모달창으로 수정, 등록, 삭제 시 알림처리를 구현하였습니다.
 </p>
+<img src="https://github.com/yst333/pocsin/assets/141698056/d825bdbb-6a74-4961-8dc0-5fa1b4b637b3">
+
+<br><br>
 
 <h3>💬 1:1문의사항</h3>
 <p>origins를 메인 화면으로 설정하고 RequestMapping 처리한 후 해당 페이지의 URL을 PostMapping 해서 화면에 입력된 데이터를 가져왔습니다</p>
+<img src="https://github.com/yst333/pocsin/assets/141698056/cee9e4db-7721-4eda-9811-3122f3759c10"/>
+
+<br><br>
 
 <h3>📢 공지사항</h3>
 <p>
@@ -166,13 +183,7 @@ AOS 라이브러리를 사용하여 아이콘을 효과적으로 표현하고, �
 <img src="https://github.com/yst333/pocsin/assets/141698056/ee9eaf46-2c2e-41c1-be6f-4742c2dd0217">
 
 <br><br>
-
-<h3>📖 꿈다이어리</h3>
-<p>풀캘린더라이브러리를 이용하여 마이페이지 내에서 달력을 확인할 수 있도록 하였습니다.</p>
-
-<br>
-<br>
-
+<hr>
 <!--admin-->
 <h2>🖥️ &nbsp;관리자 웹페이지 기능</h2>
 
@@ -186,12 +197,19 @@ AXIOS 라이브러리를 사용하여 서버통신이 가능하도록 했습니�
 </p>
 <img src="https://github.com/yst333/pocsin/assets/141698056/8bd2eaa2-b852-44d7-8f67-f2207c887b79">
 
+<br><br>
+
 <h3>☑ 문의사항</h3>
 <p>Spring Boot MVC , Read 를 이용하여 관리자가 QnA 게시판을  조회할수 있도록 기능 구현 하였습니다. AXIOS 라이브러리를 사용하여 서버통신이 가능하도록 했습니다. </p>
 
+<br><br>
+
 <h3>☑ 1:1문의</h3>
 <p>Spring Boot MVC , CRUD 를 이용하여 관리자가 클리닉 간편 상담 게시글을 조회 할 수 있도록 기능 구현 하였습니다. AXIOS 라이브러리를 사용하여 서버통신이 가능하도록 했습니다. </p>
-<img src="https://github.com/yst333/pocsin/assets/141698056/cee9e4db-7721-4eda-9811-3122f3759c10"/>
+<img src="https://github.com/yst333/pocsin/assets/141698056/2dff37ee-9641-4d05-a79f-cf3e51064388)">
+
+<br>
+<hr>
 
 <h3>💫 구동 방법</h3>
 <p>back-end/README.md참조</p>
